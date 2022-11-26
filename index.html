@@ -1,0 +1,611 @@
+<html>
+
+	<head>
+		<title>DDSC</title>
+	</head>
+	
+	<body>
+		<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+		
+		<script>
+			var contract;
+			
+			@(document).ready(function()
+			{
+				web3 = new Web3(web3.currentProvider);
+				
+				var address = "0xcD6a42782d230D7c13A74ddec5dD140e55499Df9";
+				
+				var abi = [
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "own_id",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "p_cost",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "p_specs",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "weapontype",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "prod_id",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "Owner",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Product_ID",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "RFID",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Weapon_Type",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "_p_id",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "access",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "O_ID",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "comp_name",
+				"type": "string"
+			}
+		],
+		"name": "claimOwner",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "pass",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "u_add",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "cin",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "utype",
+				"type": "string"
+			}
+		],
+		"name": "createParticipant",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "comp_id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "newrate",
+				"type": "uint256"
+			}
+		],
+		"name": "derating",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "displaychain",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "p_id",
+				"type": "uint256"
+			}
+		],
+		"name": "getParticipant",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "prod_id",
+				"type": "uint256"
+			}
+		],
+		"name": "getProduct_details",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "rfid",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "prod_id",
+				"type": "string"
+			}
+		],
+		"name": "insertRFID",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "comp_id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "p_cost",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "p_specs",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "p_review",
+				"type": "string"
+			}
+		],
+		"name": "newSub_Product",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_p_id",
+				"type": "uint256"
+			}
+		],
+		"name": "ownerSub",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "participants",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "_userName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_passWord",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_cin",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_userType",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "rating",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "products",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "_product_name",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_product_cost",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_comp_id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_product_specs",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_product_review",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_product_owner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_manufacture_date",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "spec",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "track",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tracks",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "_product_id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_owner_id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_product_owner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_timeStamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "user1_id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "user2_id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "prod_id",
+				"type": "uint256"
+			}
+		],
+		"name": "transferOwnership_product",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "user",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "password",
+				"type": "string"
+			}
+		],
+		"name": "userLogin",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+] ; 
+				
+				contract = new web3.eth.Contract(abi,address);
+				
+				
+				contract.methods.getBalance().call().then(function(bal)
+				{
+					$('#balance').html(bal);
+				})
+				
+			})
+
+		</script>
+		
+	</body>
+</html>
