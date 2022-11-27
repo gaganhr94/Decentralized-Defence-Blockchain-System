@@ -1,0 +1,142 @@
+/* File : Root.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+    /* Fonts */
+    --headingFont: "Oswald", sans-serif;
+    --bodyFont: "Oswald", sans-serif;
+    --smallText: 0.7em;
+
+    /* Colors */
+    --primary-color: #7b886b;
+    --primary-100: #f2f4f1;
+    --primary-200: #d9ddd4;
+    --primary-300: #c0c7b8;
+    --primary-400: #a7b09b;
+    --primary-500: #8e9a7f;
+    --primary-600: #748065;
+    --primary-700: #5a644f;
+    --primary-800: #414738;
+    --primary-900: #272b22;
+
+    --grey-50: #f8fafc;
+    --grey-100: #f1f5f9;
+    --grey-200: #e2e8f0;
+    --grey-300: #cbd5e1;
+    --grey-400: #94a3b8;
+    --grey-500: #64748b;
+    --grey-600: #475569;
+    --grey-700: #334155;
+    --grey-800: #1e2938;
+    --grey-900: #0f172a;
+
+    --black: #222;
+    --white: #fff;
+    --red-light: #f8d7da;
+    --red-dark: #842029;
+    --green-light: #d1e7dd;
+    --green-dark: #0f5132;
+
+    /* Variables */
+    --backgroundColor: #000000;
+    --textColor: #e5e5e5;
+    --borderRadius: 0.25rem;
+    --letterSpacing: 1px;
+    --transition: 0.3s ease-in-out all;
+    --max-width: 1120px;
+    --fix-width: 600px;
+    --block-margin: 8vw 5vw;
+}
+
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+/* supaya kalau ditambahkan padding elemennya tidak tambah besar/lebar tapi padiing diimplementasikan masuk ke dalam boz */
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--backgroundColor);
+    font-family: var(--bodyFont);
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--textColor);
+}
+
+p {
+    margin-bottom: calc(16px + 0.5vmin);
+    max-width: 40em;
+    font-size: calc(15px + 1vmin);
+    letter-spacing: 0.4px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    margin-bottom: 1.38rem;
+    font-family: "Oswald", serif;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+li,
+a,
+button {
+    font-family: var(--bodyFont);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--textColor);
+    text-decoration: none;
+}
+
+/* --- Navbar --- */
+
+.navbar-brand {
+    width: 50%;
+}
+
+.navbar-brand img {
+    width: 55%;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-brand img {
+        width: 100%;
+    }
+}
+
+/* Footer */
+
+.container2 .listtext a {
+    color: #0088A3;
+    font-size: 18px;
+}
+
+.container2 .copyrighttext {
+    font-size: 18px;
+    margin-left: 70vh;
+    font-family: "Oswald", sans-serif;
+}
+
+.container2 .copyrighttext2 {
+    font-size: 18px;
+    margin-left: 50vh;
+    font-family: "Oswald", sans-serif;
+}

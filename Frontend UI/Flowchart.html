@@ -1,0 +1,192 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles/root.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Pacifico&family=Roboto+Mono:wght@200&display=swap');
+        svg{
+           padding-left: 0;
+           padding-right: 0;
+           margin-left: auto;
+           margin-right: auto;
+           display: block;
+           width: 800px;
+        }
+        #mid{
+           padding-left: 0;
+           padding-right: 0;
+           margin-left: auto;
+           margin-right: auto;
+           display: block;
+           width: 800px;
+        }
+        h3 {
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function drawArrow(ctx, fromx, fromy, tox, toy, arrowWidth, color){
+    //variables to be used when creating the arrow
+    var headlen = 10;
+    var angle = Math.atan2(toy-fromy,tox-fromx);
+ 
+    ctx.save();
+    ctx.strokeStyle = color;
+ 
+    //starting path of the arrow from the start square to the end square
+    //and drawing the stroke
+    ctx.beginPath();
+    ctx.moveTo(fromx, fromy);
+    ctx.lineTo(tox, toy);
+    ctx.lineWidth = arrowWidth;
+    ctx.stroke();
+ 
+    //starting a new path from the head of the arrow to one of the sides of
+    //the point
+    ctx.beginPath();
+    ctx.moveTo(tox, toy);
+    ctx.lineTo(tox-headlen*Math.cos(angle-Math.PI/7),
+               toy-headlen*Math.sin(angle-Math.PI/7));
+ 
+    //path from the side point of the arrow, to the other side point
+    ctx.lineTo(tox-headlen*Math.cos(angle+Math.PI/7),
+               toy-headlen*Math.sin(angle+Math.PI/7));
+ 
+    //path from the side point back to the tip of the arrow, and then
+    //again to the opposite side point
+    ctx.lineTo(tox, toy);
+    ctx.lineTo(tox-headlen*Math.cos(angle-Math.PI/7),
+               toy-headlen*Math.sin(angle-Math.PI/7));
+ 
+    //draws the paths created above
+    ctx.stroke();
+    ctx.restore();
+}
+    </script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="main.html"><img src="assets/ddso.jpg" alt="DDSC"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="main.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Forum</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Marketplace
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="products.html">Purchase</a></li>
+                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Total Transactions : 424059179</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- <canvas id = "myCanvas" width="600" height="100"></canvas>
+                <canvas id = "mcanvas" width="600" height="200"></canvas>
+                <canvas id="Canva1" width="600" height="100"></canvas>
+                 -->
+                 <!-- <div id="mid">
+                <h3 >NALCO: Raw Materials</h3>
+                <p style:'text-align:center'>Time => 6:00am</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+                <h3>TATA</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+
+                <h3>Forging co.</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+                <h3>HAL</h3>
+                <h3>Transistors Trumen Co.</h3>
+                <h3>BEL</h3> -->
+                <div>
+                    <h3>TRANSACTIONS</h3><br><br>
+                    <ol>
+                        <li><p>Company Name: <b>NALCO</b></p>
+                            <p>Date: 21.03.2022</p>
+                            <p>Time: 0600 hr</p>
+                            <p>Product: Raw Materials</p>
+                            <p>Transferred to: <b>TATA</b></p>
+                        </li><br>
+                        <li><p>Company Name: <b>TATA</b></p>
+                            <p>Date: 22.03.2022</p>
+                            <p>Time: 0800hr</p>
+                            <p>Product: Metal Sheets</p>
+                            <p>Transferred to: <b>Forging Co.</b> </p>
+                        </li><br>
+                        <li><p>Company Name: <b>Forging Co.</b> </p>
+                            <p>Date: 22.04.2022</p>
+                            <p>Time: 0800 hr</p>
+                            <p>Product: Fuselage</p>
+                            <p>Transferred to: <b>HAL</b></p>
+                        </li><br>
+                        <li><p>Company Name: <b>Trumen Co.</b></p>
+                            <p>Date: 22.03.2022</p>
+                            <p>Time: 1500 hr</p>
+                            <p>Product: transistor</p>
+                            <p>Transferred to: <b>HAL</b></p>
+                        </li><br>
+                        <li><p>Company Name: <b>BEL</b></p>
+                            <p>Date: 21.04.2022</p>
+                            <p>Time: 1800 hr</p>
+                            <p>Product: Radars</p>
+                            <p>Transferred to: <b>HAL</b></p>
+                        </li><br>
+                        <li><p>Company Name: <b>HAL</b></p>
+                            <p>Date: 30.05.2022</p>
+                            <p>Time: 0500 hr</p>
+                            <p>Product: Tejas Fighter Jets</p>
+                            <p>Transferred to: <b>Military</b></p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var cans = document.getElementById("Canva1");
+        var cans1 = document.getElementById("mcanvas");
+        var xct = cans1.getContext("2d");
+        var tcx = cans.getContext("2d");
+        var ctx = canvas.getContext("2d");
+        ctx.font = "30px Arial";
+        tcx.font = "30px Arial";
+        drawArrow(xct,250,50, 250, 100,3,'black');
+        ctx.fillText("Company ID \n Raw MAterials",10,50);
+        tcx.fillText("Wallet ID",10,50);
+    </script>
+</body>
+    

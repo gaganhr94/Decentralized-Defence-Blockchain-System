@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles/root.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Pacifico&family=Roboto+Mono:wght@200&display=swap');
+    </style>
+</head>
+
+<body>
+    <!-- REGISTRATION FORM-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="main.html">DDSC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                    </li>
+
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="products.html">Purchase</a></li>
+                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Total Transactions : 424059179</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Form -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 style="margin-top:2vh;font-family:Oswald,sans-serif;">PRODUCT REGISTRATION</h1>
+                <hr>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1" style="font-family:Oswald,sans-serif;">Product Name</label>
+                        <input type="text" class="form-control email-input" id="exampleFormControlInput1"
+                            placeholder="Sheet Metal">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1" style="font-family:Oswald,sans-serif;">Product ID</label>
+                        <input type="text" class="form-control email-input" id="exampleFormControlInput1"
+                            placeholder="W39feq" minlenght="20" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1" style="font-family:Oswald,sans-serif;">Product Cost</label>
+                        <input type="text" class="form-control email-input" id="exampleFormControlInput1"
+                            placeholder=" " maxlenght="21">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1" style="font-family:Oswald,sans-serif;">Product Specifications</label>
+                        <textarea class="form-control email-input" id="exampleFormControlInput1">Insert Specifications
+                        </textarea>
+                    </div><br>
+                    <div class=" form-group">
+                        <label for="exampleFormControlSelect1" style="font-family:Oswald,sans-serif;">Product Type
+                            </label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Raw Material Metal</option>
+                            <option value="Afghanistan">Raw Material Non-Metal</option>
+                            <option value="Åland Islands">Main Manufacturer</option>
+                            <option value="Albania">Spare Part Manufacturer</option>
+                            <option value="Algeria">Small Repair</option>
+                            <option value="American Samoa">Moderate Repair</option>
+                            <option value="Andorra">Large Repair</option>
+                            <option value="Angola">Upgrades</option>
+                        </select>
+                    </div><br>
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-dark submit-button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"></script>
+</body>

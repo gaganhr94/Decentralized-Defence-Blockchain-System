@@ -1,0 +1,119 @@
+/* File : Main.css */
+
+@import url("../styles/root.css");
+
+/* --- Landing Section */
+.landing-section {
+  display: flex;
+  margin: var(--block-margin);
+}
+
+.landing-about {
+  position: relative;
+  margin-top: 10vw;
+  float: left;
+}
+
+.landing-section p {
+  width: 75%;
+}
+
+.landing-section h1 {
+  color: var(--primary-500);
+}
+
+.btn-join {
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-join:hover {
+  background-color: var(--primary-700);
+}
+
+.catalog-hyperlink {
+  position: relative;
+  left: 40px;
+  color: var(--green-light);
+  padding: 10px 10px;
+}
+
+.thumbnail {
+  width: 60%;
+  height: 100%;
+  float: right;
+  -webkit-box-reflect: below 1px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(250, 250, 250, 0.1)));
+}
+
+.thumbnail:hover {
+  opacity: 1;
+  transform: rotate(0deg);
+  transition: all 0.3s ease 0s;
+}
+
+.thumbnail:not(:hover) {
+  opacity: 0.6;
+  transform: rotate(12deg);
+  transition: all 0.3s ease 0s;
+}
+
+
+/* About Section */
+.about-section {
+  margin: var(--block-margin);
+  position: relative;
+}
+
+.slide {
+  margin: var(--block-margin);
+  position: relative;
+  width: 90vw;
+}
+
+/* Media Responsive */
+@media screen and (max-width: 1024px) {
+
+  .landing-section,
+  .about-section,
+  .slide {
+    flex-direction: column;
+    margin: 5vmin auto;
+  }
+
+  .landing-about {
+    margin: 20px 0 50px 0;
+  }
+
+  .thumbnail {
+    width: 80%;
+    height: 100%;
+    float: none;
+  }
+
+  .thumbnail:not(:hover) {
+    opacity: 0.6;
+    transform: rotate(0deg);
+    transition: all 0.3s ease 0s;
+  }
+}
+
+/* Footer */
+
+.container2 .listtext a {
+  color: #0088A3;
+  font-size: 18px;
+}
+
+.container2 .copyrighttext {
+  font-size: 18px;
+  margin-left: 70vh;
+  font-family: "Oswald", sans-serif;
+}
+
+.container2 .copyrighttext2 {
+  font-size: 18px;
+  margin-left: 50vh;
+  font-family: "Oswald", sans-serif;
+}

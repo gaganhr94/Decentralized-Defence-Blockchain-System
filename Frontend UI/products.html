@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google" content="notranslate" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles/products.css" />
+  <link rel="stylesheet" href="styles/root.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <title>Alusista Paman-Katalog</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="main.html"><img src="assets/logo.png" alt="DDSC" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="main.html#about">Tentang</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="buttontest">Forum</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Marketplace
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="products.html">Pembelian</a></li>
+              <li><a class="dropdown-item" href="#">Hubungi Kami</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Total Alutsista Diangkut : 424059179</a>
+              </li>
+            </ul>
+          </li>
+          <li class="mt-2">
+            <button class='bx bx-cart my-auto' id="cart-icon"></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart -->
+  <div class="cart">
+    <p class="h2 text-center pt-3">Your Cart</p>
+    <div class="cart-content">
+
+    </div>
+    <div class="total">
+      <div class="total-title">Total</div>
+      <div class="total-price">0 BTC</div>
+    </div>
+
+  <a href="form.html">    <button type="button" class="btn-buy order-now">Pesan Sekarang</button></a>
+  <!-- <button type="button" class="btn-buy order-now">Pesan Sekarang</button> -->
+    <i class='bx bx-x' id="close-cart"></i>
+  </div>
+
+  <div class="container mb-5" style="width: fit-content; margin: auto;">
+    <div class="row">
+      <div class="col">
+        <br>
+        <p class="h1" align="center">Kendaraan</p>
+        <hr class="title-hr">
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card p-1" style="width: 18rem;">
+          <div class="card-body">
+            <img src="assets/jet.jpg" class="card-img-top p-0 m-0" alt="gambar jet">
+            <hr class="card-hr">
+            <h5 class="card-title">F-15 Strike Eagle</h5>
+            <p class="card-text">
+              Panjang : 63.8 ft. (19.4m)<br>
+              Tinggi : 18.5 ft. (5.63m)<br>
+              Berat : 14.300Kg<br>
+              Kecepatan Maksimal : 2.5 Mach
+            </p>
+            <div class="d-flex">
+              <p class="h6 my-auto price">24500 BTC</p>
+              <a href="#" class="btn ms-auto add-cart">&nbsp;+&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card p-1" style="width: 18rem;">
+          <div class="card-body">
+            <img src="assets/tank.jpg" class="card-img-top p-0 m-0" alt="gambar jet">
+            <hr class="card-hr">
+            <h5 class="card-title">KF-51</h5>
+            <p class="card-text">
+              Berat : 59 Ton<br>
+              Standar Kru : 3-4<br>
+              Senjata Utama : Rh-130 L52 130 mm <br><br></p>
+            <div class="d-flex">
+              <p class="h6 my-auto price">6700 BTC</p>
+              <a href="#" class="btn ms-auto add-cart">&nbsp;+&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card p-1" style="width: 18rem;">
+          <div class="card-body">
+            <img src="assets/heli.jpg" class="card-img-top p-0 m-0" alt="gambar jet">
+            <hr class="card-hr">
+            <h5 class="card-title">APACHE AH-64</h5>
+            <p class="card-text">
+              Standar Kru : 2<br>
+              Panjang : 48.16 ft. (14.68 m)<br>
+              Tinggi : 15.49 ft. (4.72 m)<br>
+              Diameter Rotor : 48 ft. (14.63 m)
+            </p>
+            <div class="d-flex">
+              <p class="h6 my-auto price">7200 BTC</p>
+              <a href="#" class="btn ms-auto add-cart">&nbsp;+&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <div class="card p-1" style="width: 18rem;">
+          <div class="card-body">
+            <img src="assets/sts.jpg" class="card-img-top p-0 m-0" alt="gambar jet">
+            <hr class="card-hr">
+            <h5 class="card-title">STS GAZ 233114 Tigr-M</h5>
+            <p class="card-text">
+              Berat : 7.200Kg<br>
+              Panjang : 18.6 ft. (5.67m)<br>
+              Kru : 2 - 9<br>
+              Material Lapis Baja : SPM-1: 5 mm<br><br><br>
+            </p>
+            <div class="d-flex">
+              <p class="h6 my-auto price">1200 BTC</p>
+              <a href="#" class="btn ms-auto add-cart">&nbsp;+&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card p-1" style="width: 18rem;">
+          <div class="card-body">
+            <img src="assets/jetf35.jpg" class="card-img-top p-0 m-0" alt="gambar jet">
+            <hr class="card-hr">
+            <h5 class="card-title">F-35</h5>
+            <p class="card-text">
+              Laju maksimum: Mach 1.67 <br>
+              Jangkauan: 1,200 nmi on internal fuel<br>
+              Radius tempur: 610 nmi<br>
+              Rudal: Air-to-air: AIM-120 AMRAAM <br><br><br>
+            </p>
+            <div class="d-flex">
+              <p class="h6 my-auto price">34700 BTC</p>
+              <a href="#" class="btn ms-auto add-cart">&nbsp;+&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card p-1" style="width: 18rem;">
+          <div class="card-body">
+            <img src="assets/himars-cat.jpg" class="card-img-top p-0 m-0" alt="gambar jet">
+            <hr class="card-hr">
+            <h5 class="card-title">Himars M142</h5>
+            <p class="card-text">
+              Berat: 24.000 lb.<br>
+              Panjang: 23 ft.<br>
+              Lebar: 8 ft.<br>
+              Kru: 3.<br>
+              Roket Maksimal : 6 roket.<br>
+              Jangkauan Maksimum: 45 mil.</p>
+            <div class="d-flex">
+              <p class="h6 my-auto price">2056 BTC</p>
+              <a href="#" class="btn ms-auto add-cart">&nbsp;+&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <br>
+        <p class="h1" align="center">Senjata</p>
+        <hr class="title-hr">
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card p-1" style="width: 18rem;">
+          <div class="card-body">
+            <img src="assets/Pistol.jpg" class="card-img-top p-0 m-0" alt="gambar jet">
+            <hr class="card-hr">
+            <h5 class="card-title">Glock 17</h5>
+            <p class="card-text">
+              Panjang : 32 mm<br>
+              Height : 139 mm<br>
+              Jarak Penglihatan : 165 mm<br>
+            <div class="d-flex">
+              <p class="h6 my-auto price">8 BTC</p>
+              <a href="#" class="btn ms-auto add-cart">&nbsp;+&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card p-1" style="width: 18rem;">
+          <div class="card-body">
+            <img src="assets/Assault-Rifle.jpeg" class="card-img-top p-0 m-0" alt="gambar jet">
+            <hr class="card-hr">
+            <h5 class="card-title">Assault Rifle M416</h5>
+            <p class="card-text">
+              Tipe Peluru : 5.56 mm<br>
+              Maksimal Peluru : 30<br>
+              Mode Tembak : Semi/Full-auto<br></p>
+            <div class="d-flex">
+              <p class="h6 my-auto price">12 BTC</p>
+              <a href="#" class="btn ms-auto add-cart">&nbsp;+&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card p-1" style="width: 18rem;">
+          <div class="card-body">
+            <img src="assets/Sniper-Rifle.jpeg" class="card-img-top p-0 m-0" alt="gambar jet">
+            <hr class="card-hr">
+            <h5 class="card-title">Sniper Rifle</h5>
+            <p class="card-text">
+              Massa : 13.5-14.8 kg<br>
+              Panjang Barel : 51-74 cm<br>
+              Diameter : 12.7 inch<br></p>
+            <div class="d-flex">
+              <p class="h6 my-auto price">15 BTC</p>
+              <a href="#" class="btn ms-auto add-cart">&nbsp;+&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="container2 mt-3">
+    <div class="row">
+      <div class="col-sm">
+        <hr class="straightline">
+      </div>
+    </div>
+    <div class="row" style="margin-left:8vh;">
+      <div class="col-sm">
+        <h3>DDSC</h3>
+      </div>
+      <div class="col-sm">
+        <h5>MORE DDSC</h5>
+        <ul style="list-style:none;">
+          <li class="listtext">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="listtext">
+            <a class="nav-link" href="#">Media</a>
+          </li>
+          <li class="listtext">
+            <a class="nav-link" href="#">Programs</a>
+          </li>
+          <li class="listtext">
+            <a class="nav-link" href="#">Spaces</a>
+          </li>
+          <li class="listtext">
+            <a class="nav-link" href="products.html">Catalog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm">
+        <h5>ABOUT DDSC</h3>
+          <ul style="list-style:none;">
+            <li class="listtext">
+              <a class="nav-link" href="#">Partner With Us</a>
+            </li>
+            <li class="listtext">
+              <a class="nav-link" href="#">Jobs</a>
+            </li>
+            <li class="listtext">
+              <a class="nav-link" href="#">Terms & Conditions</a>
+            </li>
+            <li class="listtext">
+              <a class="nav-link" href="#">Cookie Statement</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <p class="copyrighttext">A Military Defence And Technology
+          company.</p>
+        <p class="copyrighttext2">Copyright © 2022—2022, DDSC web. Made with Ardhi, Sofyan, Erwin, Mukram,
+          And Arya.</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
